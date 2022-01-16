@@ -28,7 +28,7 @@ class Security implements FilterInterface
         // yang diperbolehkan akses pada domain dengan tanda * artinya boleh di akses oleh semua domain
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: X-API-KEY, Origin,X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization");
-        header("Access-Control-Allow-Method: GET, POST, OPTIONS, PUT, PATCH, DELETE");
+        header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS");
         $Method = $_SERVER['REQUEST_METHOD'];
         if ($Method == "OPTIONS") {
             die();

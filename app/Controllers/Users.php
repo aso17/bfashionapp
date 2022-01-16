@@ -32,7 +32,7 @@ class Users extends ResourceController
         $model = new UserModel();
         $data = $model->find(['idUsers', $id]);
         if (!$data) return $this->failNotFound('data tidak ada');
-        return $this->respond($data);
+        return $this->respond($data[0]);
     }
 
 
@@ -136,5 +136,6 @@ class Users extends ResourceController
             ],
         ];
         return $this->respond($respond);
+        redirect($_SERVER['REQUEST_URI'], 'refresh');
     }
 }
